@@ -32,10 +32,13 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Upload website files
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
+          name: github-pages
           path: ./public
 
       - name: Deploy website
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages
